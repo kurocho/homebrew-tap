@@ -2,7 +2,7 @@ class Pamie < Formula
   desc "Self-hosted long-term memory server for MCP agents"
   homepage "https://pamie.io"
   url "https://github.com/kurocho/pamie/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "a7ee1ba06276b6755574e080d00ed245e9e488fbcc95da1b548df12ae0025e7f"
+  sha256 "752e06a3e4188238acbca16c32a481189b307716b9a511dc95e317629083ecba"
   license "AGPL-3.0-only"
   head "https://github.com/kurocho/pamie.git", branch: "main"
 
