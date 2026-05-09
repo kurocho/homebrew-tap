@@ -16,18 +16,25 @@ brew install pamie
 Run Pamie locally:
 
 ```sh
-export PAMIE_TOKEN="$(openssl rand -hex 32)"
-export PAMIE_TOKEN_ID=local
-export PAMIE_TOKEN_SCOPES=all
+pamie start
+pamie status
+```
 
-pamie --addr 127.0.0.1:8080 --data-dir ./data
+The first `pamie start` run starts the local background server and prints a generated Bearer token once. Run `pamie token` to rotate the default token, and `pamie stop` to stop the background server.
+
+Pamie v1.1.0 enables local vector search by default with `local-hash`. Switch to Ollama semantic embeddings with:
+
+```sh
+ollama serve
+ollama pull embeddinggemma
+pamie start --vector-provider ollama
 ```
 
 Check the server:
 
 ```sh
-curl http://127.0.0.1:8080/health
-curl http://127.0.0.1:8080/ready
+curl http://127.0.0.1:17683/health
+curl http://127.0.0.1:17683/ready
 ```
 
 Pamie source: <https://github.com/kurocho/pamie>
